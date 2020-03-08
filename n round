@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include<string.h>
+
+int main(int argc, char **argv) {
+    int i,m,n,count,no;
+    int num[50];
+    int *p;
+    printf("input n and m:");
+    scanf("%d%d",&n,&m);
+    for(i=0;i<n;i++){
+        num[i]=i+1;
+    }
+    //prime p point to array num
+    p=num;
+    count=no=0;
+    while(no<n-1){
+        //order is not zero
+        if(*p !=0) count++;
+        if(count==m){
+            no++;
+            printf("NO%d:%d\n",no,*p);
+            *p=0;
+            count=0;
+        }
+        
+        p++;
+        if(p==num+n) p=num;
+    }
+    p=num;
+    while(*p==0){
+        p++;
+        printf("Last NO is:%d\n",*p);
+    }
+    
+    return 0;
+    }
