@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include<string.h>
+void strmcpy(char *s,char *t,int m);
+int main(int argc, char **argv) {
+    int m=5;
+    char t[80],s[80];
+    gets(t);
+    strmcpy(s,t,m);
+    puts(s);
+    
+    return 0;
+}
+
+void strmcpy(char *s,char *t,int m){
+    t=t+m-1;
+    while(*t !='\0'){
+        *s=*t;
+        s++;
+        t++;
+    }
+    *s='\0';
+}
