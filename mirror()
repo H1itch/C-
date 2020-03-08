@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include<string.h>
+void delchar(char *str,char c);
+int main(int argc, char **argv) {
+	char str[80];
+	gets(str);
+	int mirror(char *p);
+	if(mirror(str)!=0) printf("yes");
+	else printf("no");
+} 
+
+
+int mirror(char *p){
+	    char *q;
+	    q=p;
+	    while(*q !='\0'){
+	        q++;
+	    }
+	    q--;
+	    q--;
+	    while(p<q){
+	        if(*p!=*q) return 0;
+	        p++;
+	        q--;
+	    }
+	    return 1;
+	}
