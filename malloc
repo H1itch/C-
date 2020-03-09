@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include<string.h>
+void delchar(char *str,char c);
+int main(int argc, char **argv) {
+    int *p,n,i,sum,avg,count,max,min,t;
+    sum=max=0;
+    min=1000;
+    printf("enter n");
+    scanf("%d",&n);
+    if((p=(int *) malloc(n*sizeof(int)))==NULL){
+        printf("not avaliable");
+        exit (1);
+    }
+    //input
+    printf("entet %d number",n);
+    for(i=0;i<n;i++){
+        scanf("%d",p+i);
+    }
+    //avg
+    count=i;
+    for(i=0;i<n;i++){
+        sum+=*(p+i);
+    }
+    avg=sum/count;
+    //min
+    for(i=0;i<n;i++){
+        if(*(p+i)<min){
+            min=*(p+i);
+        }
+    }
+    //max
+    for(i=0;i<n;i++){
+        if(*(p+i)>max){
+            max=*(p+i);
+        }
+    }
+    
+    printf("avg is %d\n",avg);
+    printf("max is %d\n",max);
+    printf("min is %d\n",min);
+    
+    free(p);
+    return 0;
+}
